@@ -1,29 +1,169 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-	<link rel="stylesheet" href="css\styles.css">
-
+	<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+	<link rel='stylesheet' href='css/styles.css'>
+	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+	<script type='text/javascript' src='js/vendor/gsap/gsap.min.js'></script>
+	<script type='text/javascript' src='js/scripts.js'></script>
 </head>
 
 <body>
-	<div class="full-screen">
-		<div class="initiative-viewport">
-			<div class="initiative-bar">
-				<div class="monster">
+	<div class='full-screen'>
+		<div class='entity-list'>
+			<div class='entity mob spider'>
+				<div class='icon'></div>
+				<div class='initiative'>20</div>
+				<div class='name'>Spider</div>
+				<div class='image'>中文</div>
+			</div>	
+			<div class='entity player fighter'>
+				<div class='icon'></div>
+				<div class='initiative'>20</div>
+				<div class='name'>Fighter</div>
+				<div class='image'></div>
+			</div>
+			<div class='entity player bard'>
+				<div class='icon'></div>
+				<div class='initiative'>16</div>
+				<div class='name'>Bard</div>
+				<div class='image'></div>
+			</div>
+			<div class='entity player paladin'>
+				<div class='icon'></div>
+				<div class='initiative'>1</div>
+				<div class='name'>Bard</div>
+				<div class='image'></div>
+			</div>
+			<div class='entity player wizard'>
+				<div class='icon'></div>
+				<div class='initiative'>1</div>
+				<div class='name'>Bard</div>
+				<div class='image'></div>
+			</div>
+			<div class='entity player wizard'>
+				<div class='icon'></div>
+				<div class='initiative'>1</div>
+				<div class='name'>Bard</div>
+				<div class='image'></div>
+			</div>
+			<div class='entity npc roach'>
+				<div class='icon'></div>
+				<div class='initiative'>1</div>
+				<div class='name'>Bard</div>
+				<div class='image'></div>
+			</div>
+		</div>
+		<div class='initiative-viewport'>
+			<div class='initiative-bar'>
+				<div class='entity mob spider'>
+					<div class='icon'><img src='image/mob.svg' /></div>
+					<div class='initiative'>20</div>
+					<div class='name'>Spider</div>
+					<div class='image'></div>
 				</div>
-				<div class="player fighter">
+				<div class='entity mob spider'>
+					<div class='icon'><img src='image/mob.svg' /></div>
+					<div class='initiative'>5</div>
+					<div class='name'>Spider</div>
+					<div class='image'></div>
 				</div>
-				<div class="player fighter">
+				<div class='entity mob spider'>
+					<div class='icon'><img src='image/mob.svg' /></div>
+					<div class='initiative'>2</div>
+					<div class='name'>Spider</div>
+					<div class='image'></div>
 				</div>
-				<div class="player fighter">
+				<div class='entity mob spider'>
+					<div class='icon'><img src='image/mob.svg' /></div>
+					<div class='initiative'>10</div>
+					<div class='name'>Spider</div>
+					<div class='image'></div>
 				</div>
-				<div class="player fighter">
+				<div class='entity mob spider'>
+					<div class='icon'><img src='image/mob.svg' /></div>
+					<div class='initiative'>11</div>
+					<div class='name'>Spider</div>
+					<div class='image'></div>
+				</div>
+				<div class='entity mob spider'>
+					<div class='icon'><img src='image/mob.svg' /></div>
+					<div class='initiative'>14</div>
+					<div class='name'>Spider</div>
+					<div class='image'></div>
+				</div>
+				<div class='entity mob spider'>
+					<div class='icon'><img src='image/mob.svg' /></div>
+					<div class='initiative'>16</div>
+					<div class='name'>Spider</div>
+					<div class='image'></div>
+				</div>
+				<div class='entity mob spider'>
+					<div class='icon'><img src='image/mob.svg' /></div>
+					<div class='initiative'>20</div>
+					<div class='name'>Spider</div>
+					<div class='image'></div>
+				</div>
+				<div class='entity player fighter'>
+					<div class='icon'><img src='image/fighter.jpeg' /></div>
+					<div class='initiative'>20</div>
+					<div class='name'>Fighter</div>
+					<div class='image'></div>
+				</div>
+				<div class='entity player bard'>
+					<div class='icon'><img src='image/bard.jpeg' /></div>
+					<div class='initiative'>16</div>
+					<div class='name'>Bard</div>
+					<div class='image'></div>
+				</div>
+				<div class='entity player paladin'>
+					<div class='icon'><img src='image/paladin.jpeg' /></div>
+					<div class='initiative'>1</div>
+					<div class='name'>Bard</div>
+					<div class='image'></div>
+				</div>
+				<div class='entity player wizard'>
+					<div class='icon'><img src='image/wizard.jpeg' /></div>
+					<div class='initiative'>1</div>
+					<div class='name'>Bard</div>
+					<div class='image'></div>
+				</div>
+				<div class='entity npc erinka'>
+					<div class='icon'><img src='image/npc.jpeg' /></div>
+					<div class='initiative'>10</div>
+					<div class='name'>Erinka</div>
+					<div class='image'></div>
+				</div>
+				<div class='entity init-counter'>
+					<div class='initiative'>20</div>
+				</div>
+				<div class='entity init-counter'>
+					<div class='initiative'>15</div>
+				</div>
+				<div class='entity init-counter'>
+					<div class='initiative'>10</div>
+				</div>
+				<div class='entity init-counter'>
+					<div class='initiative'>5</div>
 				</div>
 			</div>
 		</div>
+		<div class='current-entity'>
+		
+		</div>
 
-		<div class="next"></div>
+		<div class='next'>
+			Next
+		</div>
+
+		<div class='reset-all'>
+			Reset All
+		</div>
+
+		<div class='reset-monsters'>
+			Encounter End
+		</div>
 	</div>
 
 

@@ -1,11 +1,67 @@
 html, body{
-	height:100vh;
+	height: 100vh;
+	margin: 0;
+	position: relative;
+	font-family: 'Hiragino Sans GB Normal', 'Tangerine', serif;
+	font-size:15px;
 }
 
 .full-screen{
-	 /*background-image: url("../image/bg.jpg"); */
+	background-image: url("../image/bg.jpg"); 
 	height:100vh;
 	width:100vw;
 	background-size: cover;
 	background-position: center;
+	position: relative;
+}
+
+.initiative-viewport{
+	position: absolute;
+	height:80vh;
+	top:10vh;
+	right:30vw;
+	overflow-y: scroll;
+	padding:2rem;
+}
+
+.initiative-bar .entity{
+	height:10rem;
+	width:15rem;
+	border: 7px solid #000;
+	margin-top:1rem;
+	border-radius: 7px;
+	-webkit-box-shadow: 10px 10px 24px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 24px 0px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 24px 0px rgba(0,0,0,0.75);
+	position: relative;
+}
+.entity .mob .icon{
+	background-image: linear-gradient(to bottom,#eb1313,#8d0b0b);
+	width:60px;
+	height:60px;
+}		
+.entity .icon{
+	width:60px;
+	height:60px;
+}
+.entity .icon img{
+	height:100%;
+	width:100%;
+	object-fit: cover;
+	object-position: 50% 50%;
+}
+.entity.player{
+	border-color: #13eb13;
+}
+.entity.player-control{
+	border-color: #1313eb;
+}
+
+
+.entity.npc{
+	border-color: #13ebeb;
+}
+
+.entity.mob{
+	border-color: #eb1313;
 }
