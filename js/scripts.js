@@ -19,17 +19,7 @@ $(document).ready(function(){
 
 	});
 
-	$('.button.next').click(function(){
-		if(state() == true){
-			moveCurrentToTop();
-			var scroll = $(".initiative-viewport").scrollTop() - $(".initiative-bar .entity").height();
-			$(".initiative-viewport").animate({scrollTop:scroll}, 500, 'swing', function() { 
-			   removeBottom();
-			});
-			
-			updateCurrent();
-		}
-	});
+	$('.button.next').click(next);
 
 	$('.button.resort').click(function(){
 		if(state() == false){
@@ -43,6 +33,12 @@ $(document).ready(function(){
 		}
 
 	});
+
+	document.body.onkeyup = function(e){
+    	if(e.keyCode == 32){
+        	next();
+    	}
+	}
 });
 
 
@@ -85,4 +81,17 @@ function stop(){
 
 function start(){
 	$('body').removeClass('game-stopped');
+}
+
+
+function next(){
+	if(state() == true){
+		moveCurrentToTop();
+		var scroll = $(".initiative-viewport").scrollTop() - $(".initiative-bar .entity").height();
+		$(".initiative-viewport").animate({scrollTop:scroll}, 500, 'swing', function() { 
+		   removeBottom();
+		});
+		
+		updateCurrent();
+	}
 }
