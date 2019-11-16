@@ -1,4 +1,3 @@
-var state = 0;  // 0 for not started, 1 for running
 
 
 $(document).ready(function(){
@@ -12,15 +11,16 @@ $(document).ready(function(){
 	sort();
 
 	$('.button.start').click(function(){
-		if(state == 0){
-			state = 1;
+		console.log(state());
+		if(state() == false){
+			start();
 			updateCurrent();	
 		}
 
 	});
 
 	$('.button.next').click(function(){
-		if(state == 1){
+		if(state() == true){
 			moveCurrentToTop();
 			var scroll = $(".initiative-viewport").scrollTop() - $(".initiative-bar .entity").height();
 			$(".initiative-viewport").animate({scrollTop:scroll}, 500, 'swing', function() { 
@@ -29,6 +29,19 @@ $(document).ready(function(){
 			
 			updateCurrent();
 		}
+	});
+
+	$('.button.resort').click(function(){
+		if(state() == false){
+			sort();	
+		}
+
+	});
+	$('.button.stop').click(function(){
+		if(state() == true){
+			stop();	
+		}
+
 	});
 });
 
@@ -60,4 +73,16 @@ function moveCurrentToTop(){
 
 function removeBottom(){
 	$('.initiative-bar .entity:last-child').remove();
+}
+
+function state(){
+	return !$('body').hasClass('game-stopped');
+}
+
+function stop(){
+	$('body').addClass('game-stopped');
+}
+
+function start(){
+	$('body').removeClass('game-stopped');
 }
