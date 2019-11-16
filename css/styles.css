@@ -34,8 +34,11 @@ html, body{
 	-moz-box-shadow: 10px 10px 24px 0px rgba(0,0,0,0.75);
 	box-shadow: 10px 10px 24px 0px rgba(0,0,0,0.75);
 	position: relative;
+	background-image: url("../image/board.jpg");
+	background-size: contain;
+	background-repeat: repeat-y; 
 }
-.entity .mob .icon{
+.entity.mob .icon{
 	background-image: linear-gradient(to bottom,#eb1313,#8d0b0b);
 	width:60px;
 	height:60px;
@@ -43,6 +46,9 @@ html, body{
 .entity .icon{
 	width:60px;
 	height:60px;
+	top:0;
+	right:0;
+	position: absolute;
 }
 .entity .icon img{
 	height:100%;
@@ -50,6 +56,36 @@ html, body{
 	object-fit: cover;
 	object-position: 50% 50%;
 }
+
+.entity .initiative{
+	position: absolute;
+	top:0;
+	left:0;
+	width:60px;
+	height:60px;
+	font-size: 2.5rem;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    color:white;
+    font-weight: 900;
+
+}
+.entity .name{
+	position: absolute;
+	top:60px;
+	left:0;
+	width:100%;
+	height:60px;
+	font-size: 1.75rem;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color:white;
+}
+
 .entity.player{
 	border-color: #13eb13;
 }
@@ -64,4 +100,50 @@ html, body{
 
 .entity.mob{
 	border-color: #eb1313;
+}
+.entity.mob .icon{
+	padding:10px;
+    box-sizing: border-box;
+}
+
+.entity-list{
+	display: none;
+}
+.grey-shade{
+	opacity: 0.4;
+}
+
+
+
+
+.button{
+	cursor: pointer;
+	width:140px;
+	height:40px;
+	background-color: #13eb13;
+	border-radius: 10px;
+	font-family: 'Public Sans';
+	text-align: center;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.next{
+	bottom: 160px;
+	left:100px;
+}
+
+.start{
+	bottom: 100px;
+	left: 100px;
+}
+
+.reset-all{
+	display: none;
+}
+
+.reset-monsters{
+	display: none;
 }
