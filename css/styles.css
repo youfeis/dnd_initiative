@@ -17,11 +17,11 @@ html, body{
 
 .initiative-viewport{
 	position: absolute;
-	height:80vh;
-	top:10vh;
-	right:30vw;
+	height:calc(100% - 4rem);
+	right:100px;
 	overflow-y: scroll;
-	padding:2rem;
+	margin:2rem 0;
+	padding:0 2rem;
 }
 
 .initiative-bar .entity{
@@ -38,6 +38,10 @@ html, body{
 	background-size: contain;
 	background-repeat: repeat-y; 
 }
+.initiative-bar .entity:last-child{
+	transform: scale(1.08);
+}
+
 .entity.mob .icon{
 	background-image: linear-gradient(to bottom,#eb1313,#8d0b0b);
 	width:60px;
@@ -145,5 +149,22 @@ html, body{
 }
 
 .reset-monsters{
+	display: none;
+}
+
+.current-entity .entity{
+	height:10rem;
+	width:15rem;
+	border: 7px solid #000;
+	margin-top:1rem;
+	border-radius: 7px;
+	-webkit-box-shadow: 10px 10px 24px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 24px 0px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 24px 0px rgba(0,0,0,0.75);
+	position: relative;
+	background-image: url("../image/board.jpg");
+	background-size: contain;
+	background-repeat: repeat-y; 
+
 	display: none;
 }

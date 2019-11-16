@@ -22,7 +22,11 @@ $(document).ready(function(){
 	$('.button.next').click(function(){
 		if(state == 1){
 			moveCurrentToTop();
-			removeBottom();
+			var scroll = $(".initiative-viewport").scrollTop() - $(".initiative-bar .entity").height();
+			$(".initiative-viewport").animate({scrollTop:scroll}, 500, 'swing', function() { 
+			   removeBottom();
+			});
+			
 			updateCurrent();
 		}
 	});
