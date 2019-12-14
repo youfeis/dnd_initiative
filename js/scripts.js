@@ -88,9 +88,9 @@ function next(){
 	if(state() == true){
 		moveCurrentToTop();
 		var scroll = $(".initiative-viewport").scrollTop() - $(".initiative-bar .entity").height();
-		$(".initiative-viewport").animate({scrollTop:scroll}, 500, 'swing', function() { 
-		   removeBottom();
-		});
+		//$(".initiative-viewport").animate({scrollTop:scroll}, 200, 'swing', function() { 
+	    removeBottom();
+		//});
 		
 		updateCurrent();
 	}
