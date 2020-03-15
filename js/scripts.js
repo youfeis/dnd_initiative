@@ -38,12 +38,29 @@ $(document).ready(function(){
 
 
 
-
 	loadData();
-	$('.entity input.initiative').focus(function() {
+
+
+
+
+
+	$('input').focus(function() {
     	$(this).select();
 	});
 	$('.initiative-viewport').scrollTop($('.initiative-bar').height());
+
+	$('.remove-from-list').click(function(e){
+		$(e.target).parent().remove();
+	});
+	$('.add-to-list').click(function(e){
+		let item = $(e.target).parent();
+		let initiative = item.find('.initiative')[0].value;
+		let type = item[0].getAttribute('data-type');
+		let playerClass = type;
+		let name = item.find('.name')[0].value;
+		let arr = [type, playerClass, name, initiative];
+		addToList(arr);
+	});
 });
 
 
