@@ -1,14 +1,13 @@
 
 
 $(document).ready(function(){
-	$('.initiative-viewport').scrollTop($('.initiative-bar').height());
+	
 
 	new Sortable(initiativeBar, {
     	animation: 150,
     	ghostClass: 'grey-shade'
 	});
 
-	sort();
 
 	$('.button.start').click(function(){
 		console.log(state());
@@ -16,11 +15,8 @@ $(document).ready(function(){
 			start();
 			updateCurrent();	
 		}
-
 	});
-
 	$('.button.next').click(next);
-
 	$('.button.resort').click(function(){
 		if(state() == false){
 			sort();	
@@ -39,6 +35,15 @@ $(document).ready(function(){
         	next();
     	}
 	}
+
+
+
+
+	loadData();
+	$('.entity input.initiative').focus(function() {
+    	$(this).select();
+	});
+	$('.initiative-viewport').scrollTop($('.initiative-bar').height());
 });
 
 
@@ -47,8 +52,8 @@ function sort(){
 }
 
 function asc_sort(a, b){
-	var int_a = parseInt($(a).find('.initiative').text(), 10);
-	var int_b = parseInt($(b).find('.initiative').text(), 10);
+	var int_a = parseInt($(a).find('.initiative')[0].value, 10);
+	var int_b = parseInt($(b).find('.initiative')[0].value, 10);
 	if (int_b < int_a){
 		return 1;
 	}else if(int_b > int_a){

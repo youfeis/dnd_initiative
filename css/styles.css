@@ -53,12 +53,25 @@ html, body{
 	top:0;
 	right:0;
 	position: absolute;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url('../image/npc.jpeg');
 }
-.entity .icon img{
-	height:100%;
-	width:100%;
-	object-fit: cover;
-	object-position: 50% 50%;
+.entity.fighter .icon{
+	background-image: url('../image/fighter.jpeg');
+}
+.entity.paladin .icon{
+	background-image: url('../image/paladin.jpeg');
+}
+.entity.wizard .icon{
+	background-image: url('../image/wizard.jpeg');
+}
+.entity.bard .icon{
+	background-image: url('../image/bard.jpeg');
+}
+.entity.mob .icon{
+	background-image: url('../image/mob.svg');
 }
 
 .entity .initiative{
@@ -73,7 +86,13 @@ html, body{
     align-items: center;
     color:white;
     font-weight: 900;
-
+    background: transparent;
+	font-family: 'Hiragino Sans GB Normal', 微软雅黑, 'Tangerine', serif;
+	border:none;
+	text-align: center;
+}
+.entity .initiative:focus{
+	outline: none !important;
 }
 .entity .name{
 	position: absolute;
@@ -198,5 +217,11 @@ html, body{
 	width:100%;
 	height:100%;
 	font-size: 6rem;
+}
+
+
+.pdf-card{
+	height:100vh;
+	width:50vw;
 }
 
